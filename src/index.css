@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body .content {
+  padding: 10px;
+}
+body a.app-link {
+  color: #2b40a4 !important;
+}
+.anontation {
+  text-align: center;
+  font-weight: bold;
+  font-size: 11px;
+}
+.float-bottom {
+  position: fixed;
+  bottom: 25px;
+  right: 0;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+/*
+  Header component
+*/
+.app-header {
+  background-color: #FFF;
+  padding: 25px 15px;
+  color: #333;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ddd;
+  text-align: center
+}
+.app-title {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+.close-component {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.back-component {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.back-component > a, .back-component > a:hover, .back-component > a:active {
+  color: #444;
+  text-decoration: none;
+}
+
+/*
+  SIGNUP
+*/
+.sub-title {
+  text-transform: uppercase;
+  color: #333;
+  font-size: 15px;
+  padding: 10px 0 20px 0;
+  text-align: center;
+}
+#signup-menu {
+  list-style: none;
+  padding: 0;
+}
+#signup-menu > li {
+  border-top: 1px solid #ececec;
+  padding: 10px 5px;
+}
+#signup-menu > li:last-child {
+  border-bottom: 1px solid #ececec;
+}
+#signup-menu > li > a {
+  text-transform: uppercase;
+  color: #a1a1a1;
+  text-decoration: none;
+}
+#signup-menu > li > a.selected, #signup-menu > li > a:hover, #signup-menu > li > a:active, #signup-menu > li > a:focus {
+  color: #2b40a4;
+  text-decoration: none;
+}
