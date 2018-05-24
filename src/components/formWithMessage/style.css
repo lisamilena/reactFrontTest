@@ -1,0 +1,14 @@
+.form-with-messsage {
+    padding: 10px 10px 20px;
+}
+.form-with-messsage label {
+    font-size: 12px;
+    margin-top: 1rem;
+}
+.form-with-messsage input {
+    border: none;
+    border-bottom: 1px solid #777;
+    border-radius: 0;
+    padding: 7px 0;
+    font-size: 15px;
+}

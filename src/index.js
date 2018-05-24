@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import '../node_modules/material-design-icons/iconfont/material-icons.css';
 
-import Home from './pages/home';
-import Form from './pages/form';
-import AboutPage from './pages/about';
+import Signup from './pages/signup';
+import Guest from './pages/guest';
+import Agency from './pages/agency';
+import Company from './pages/company';
 import NoMatch from './pages/noMatch';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -14,9 +16,10 @@ class Index {
         if (!element) throw new Error('App.renderToDOM: element is required!');
         
         const locations = {
-            '/': <Home />,
-            '/form': <Form />,
-            '/about': <AboutPage />,
+            '/': <Signup />,
+            '/guest': <Guest />,
+            '/agency': <Agency />,
+            '/company': <Company />,
             '/notFound': <NoMatch />
         };
 
