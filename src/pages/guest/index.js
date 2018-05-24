@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import Form from './form';
 import Header from '../../components/header';
+import FormWithMessage from '../../components/formWithMessage';
 
 // styles
 import styles from './style.css';
@@ -43,20 +45,7 @@ class IndexPage extends Component {
         return ( 
             <div>
                 <Header title="hotel guest" hasBack/>
-                <h3 className="title">{this.state.usersTypes.title}</h3>
-                <ul className="userTypes">
-                    {
-                        this.state.usersTypes.users.map((user, index) => (
-                            <li key={index} onClick={()=>this.activeUser(user.id)}>
-                                {user.icon}
-                                <p>{user.title}</p>
-                            </li>
-                        ))
-                    }
-                </ul>
-                <div>
-                    {this.formActive}
-                </div>
+                <FormWithMessage form={Form}/>
             </div>
         );
     }

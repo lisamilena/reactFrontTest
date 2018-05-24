@@ -1,5 +1,7 @@
 import React from 'react';
+import Form from './form';
 import Header from '../../components/header';
+import FormWithMessage from '../../components/formWithMessage';
 
 class AppRoot extends React.Component {
 
@@ -7,7 +9,7 @@ class AppRoot extends React.Component {
         return (
             <div>
                 <Header title="company" hasBack/>
-                company
+                <FormWithMessage form={Form}/>
             </div>
         );
     }
