@@ -5,35 +5,13 @@ import FormWithMessage from '../../components/formWithMessage';
 
 // styles
 import styles from './style.css';
+const urlForm = '/api/upsertGuest',
+messagge = {
+    title: 'thank you!',
+    subtitle: 'Shortly we will be in contact'
+};
 
-class IndexPage extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            usersTypes: {
-                title: 'Tipos de perfiles',
-                users: [{
-                    title: 'Particulares',
-                    icon: "icons.groom",
-                    link: '/about',
-                    id: 1
-                }, {
-                    title: 'Agencias',
-                    icon: "icons.home",
-                    link: '/form',
-                    id: 2
-                }, {
-                    title: 'Empresas',
-                    icon: "icons.office",
-                    link: '/noMatch',
-                    id: 3
-                }]
-            }
-        };
-        
-        this.formActive = 1;
-    };
+class Guest extends Component {
 
     activeUser = id => {
         this.formActive = id;
@@ -45,10 +23,10 @@ class IndexPage extends Component {
         return ( 
             <div>
                 <Header title="hotel guest" hasBack/>
-                <FormWithMessage form={Form}/>
+                <FormWithMessage form={Form} url={urlForm} messageSuccess={messagge}/>
             </div>
         );
     }
 }
 
-export default IndexPage;
+export default Guest;
