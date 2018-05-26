@@ -1,0 +1,17 @@
+{
+    "title": "what kind of user are you?",
+    "anontation": "Enjoy a 10% discount on your reservation just for signup",
+    "items": [{
+        "id": "guest",
+        "title": "a hotel guest",
+        "link": "/guest"
+    }, {
+        "id": "agency",
+        "title": "a travel agency",
+        "link": "/agency"
+    }, {
+        "id": "company",
+        "title": "a company",
+        "link": "/company"
+    }]
+}
