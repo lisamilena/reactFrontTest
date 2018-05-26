@@ -1,0 +1,26 @@
+{
+    "/api/upsertAgency": {
+        "title": "thank you!",
+        "message": {
+            "title": "Shortly we will be in contact",
+            "content": null
+        }
+    },
+    "/api/upsertCompany": {
+        "title": "thank you!",
+        "message": {
+            "title": "Shortly we will be in contact",
+            "content": null
+        }
+    },
+    "/api/upsertGuest": {
+        "title": "welcome!",
+        "message": {
+            "title": "Advantages",
+            "content":[
+                "Enjoy a 10% discount on your reservation",
+                "24hs / 365 days phone 900-000-0000"
+            ]
+        }
+    }
+}

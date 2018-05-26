@@ -3,19 +3,15 @@ import Form from './form';
 import Header from '../../components/header';
 import FormWithMessage from '../../components/formWithMessage';
 
-const urlForm = '/api/upsertAgency',
-messagge = {
-    title: 'thank you!',
-    subtitle: 'Shortly we will be in contact'
-};
+const urlForm = '/api/upsertAgency';
 
 class Agency extends Component {
   
   render() {
     return (
-      <div className="App">
+      <div>
         <Header title="travel agency" hasBack/>
-        <FormWithMessage form={Form} url={urlForm} messageSuccess={messagge}/>
+        <FormWithMessage form={Form} url={urlForm}/>
       </div>
     );
   }

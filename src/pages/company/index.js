@@ -3,11 +3,7 @@ import Form from './form';
 import Header from '../../components/header';
 import FormWithMessage from '../../components/formWithMessage';
 
-const urlForm = '/api/upsertCompany',
-messagge = {
-    title: 'thank you!',
-    subtitle: 'Shortly we will be in contact'
-};
+const urlForm = '/api/upsertCompany';
 
 class Company extends React.Component {
 
@@ -15,7 +11,7 @@ class Company extends React.Component {
         return (
             <div>
                 <Header title="company" hasBack/>
-                <FormWithMessage form={Form} url={urlForm} messageSuccess={messagge}/>
+                <FormWithMessage form={Form} url={urlForm}/>
             </div>
         );
     }

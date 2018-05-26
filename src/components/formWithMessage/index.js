@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import style from './style.css';
-const image = 'src/components/formWithMessage/success.png';
+import dataResponse from './data.json';
+import './style.css';
 
 class FormWithMessage extends Component {
     constructor() {
@@ -18,31 +18,45 @@ class FormWithMessage extends Component {
             });
         });
 
-        fetch('/api/form-submit-url', {
+        fetch(this.props.url, {
             method: 'POST',
             body: itemToSend,
           })
-          .then(response => {
-            this.data = {name: itemToSend.name};
+          .then(() => {
+            const response = dataResponse[this.props.url];
+            this.data = {
+                name: itemToSend.name,
+                title: response.title,
+                message: response.message
+            };
             this.setState({active: true});
           });
     }
 
     render() {
         return (
-            <div className="form-with-messsage">
+            <div className="form-with-message content">
                 {!this.data ? <form onSubmit={this.handleSubmit}>
                     <this.props.form/>
-
                     <p className="legend">* required fields</p>
-                    <button type="submit" className="btn btn-block">Send</button>
+                    <div className="text-center float-content">
+                        <button type="submit" className="btn">Send</button>
+                    </div>
                 </form> : null}
+                
                 {this.data ? <div>
-                    <h3>{this.props.messageSuccess.title}</h3>
+                    <h3>{this.data.title}</h3>
                     <h3>{this.data.name}</h3>
                     <div className="material-icons success">check</div>
-                    <p>{this.props.messageSuccess.subtitle}</p>
-                    <button type="submit" className="btn btn-block">Continue</button>
+                    <h4>{this.data.message.title}</h4>
+                    {this.data.message.content ? <ul>
+                        {this.data.message.content.map((item, index) => (
+                            <li key={index}><div className="material-icons">check_circle</div> {item}</li>
+                        ))}
+                    </ul> : null}
+                    <div className="text-center float-content">
+                        <a className="btn" href="/">Continue</a>
+                    </div>
                 </div> : null}
             </div>
         );

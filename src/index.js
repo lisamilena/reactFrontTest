@@ -8,6 +8,7 @@ import Guest from './pages/guest';
 import Agency from './pages/agency';
 import Company from './pages/company';
 import NoMatch from './pages/noMatch';
+import Signin from './pages/signin';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -20,14 +21,15 @@ class Index {
             '/guest': <Guest />,
             '/agency': <Agency />,
             '/company': <Company />,
-            '/notFound': <NoMatch />
+            '/notFound': <NoMatch />,
+            '/signin': <Signin />
         };
 
         try {
             ReactDOM.render(locations[window.location.pathname], element);
             registerServiceWorker();
         } catch(e) {
-           // window.location.pathname = '/notFound';
+            window.location.pathname = '/notFound';
            console.log(e)
         }
     }

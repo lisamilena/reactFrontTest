@@ -4,7 +4,9 @@ body {
   font-family: sans-serif;
 }
 body .content {
-  padding: 10px;
+  padding: 15px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 body a.app-link {
   color: #2b40a4 !important;
@@ -13,6 +15,7 @@ body a.app-link {
   text-align: center;
   font-weight: bold;
   font-size: 11px;
+  padding-top: 10px;
 }
 .float-bottom {
   position: fixed;
@@ -21,6 +24,25 @@ body a.app-link {
   font-size: 12px;
   text-align: center;
   width: 100%;
+}
+.content .float-content {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+}
+.content .float-content .btn {
+    width: 90%;
+    max-width: 380px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    color: #FFF;
+    background: #b5a05f;
+}
+.content .float-content-top {
+  position: fixed;
+  top: 10px;
+  left: 10px;
 }
 
 /*
@@ -69,7 +91,7 @@ body a.app-link {
 }
 #signup-menu > li {
   border-top: 1px solid #ececec;
-  padding: 10px 5px;
+  padding: 15px 5px;
 }
 #signup-menu > li:last-child {
   border-bottom: 1px solid #ececec;
@@ -82,4 +104,7 @@ body a.app-link {
 #signup-menu > li > a.selected, #signup-menu > li > a:hover, #signup-menu > li > a:active, #signup-menu > li > a:focus {
   color: #2b40a4;
   text-decoration: none;
+}
+#signup-menu > li > a > .material-icons{
+  font-size: 20px;
 }
