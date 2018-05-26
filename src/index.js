@@ -13,32 +13,32 @@ import Signin from './pages/signin';
 import registerServiceWorker from './registerServiceWorker';
 
 class Index {
-    renderPage(element) {
-        if (!element) throw new Error('App.renderToDOM: element is required!');
-        
-        const locations = {
-            '/': <Signup />,
-            '/guest': <Guest />,
-            '/agency': <Agency />,
-            '/company': <Company />,
-            '/notFound': <NoMatch />,
-            '/signin': <Signin />
-        };
+  renderPage(element) {
+    if (!element) throw new Error('App.renderToDOM: element is required!');
 
-        try {
-            ReactDOM.render(locations[window.location.pathname], element);
-            registerServiceWorker();
-        } catch(e) {
-            window.location.pathname = '/notFound';
-           console.log(e)
-        }
+    const locations = {
+      '/': <Signup />,
+      '/guest': <Guest />,
+      '/agency': <Agency />,
+      '/company': <Company />,
+      '/notFound': <NoMatch />,
+      '/signin': <Signin />,
+    };
+
+    try {
+      ReactDOM.render(locations[window.location.pathname], element);
+      registerServiceWorker();
+    } catch (e) {
+      console.log(e);
+      //window.location.pathname = '/notFound';
     }
+  }
 }
 export default Index;
 
 const main = () => {
-    const index = new Index();
-    index.renderPage(document.getElementById('root'));
+  const index = new Index();
+  index.renderPage(document.getElementById('root'));
 };
 
 main();
