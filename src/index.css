@@ -46,11 +46,11 @@ body a.app-link {
   left: 10px;
 }
 /* Inputs */
-.content form label {
+.content form label, form.content label {
   font-size: 12px;
   margin-top: 1rem;
 }
-.content form input {
+.content form input, form.content input {
   border: none;
   border-bottom: 1px solid #777;
   border-radius: 0;
