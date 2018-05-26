@@ -5,17 +5,6 @@ body div.form-with-message {
 /*
     FORM
 */
-.form-with-message label {
-    font-size: 12px;
-    margin-top: 1rem;
-}
-.form-with-message input {
-    border: none;
-    border-bottom: 1px solid #777;
-    border-radius: 0;
-    padding: 7px 0;
-    font-size: 15px;
-}
 .form-with-message .legend {
     font-size: 12px;
 }

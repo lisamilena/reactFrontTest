@@ -30,7 +30,6 @@ class Index {
             registerServiceWorker();
         } catch(e) {
             window.location.pathname = '/notFound';
-           console.log(e)
         }
     }
 }
