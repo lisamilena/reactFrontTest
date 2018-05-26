@@ -9,6 +9,7 @@ class Form extends Component {
           type="text"
           id="name"
           name="name"
+          autoComplete="off"
           className="form-control"
           placeholder="Enter your agency name"
           required
@@ -19,6 +20,7 @@ class Form extends Component {
           type="text"
           id="contactName"
           name="contactName"
+          autoComplete="name"
           className="form-control"
           placeholder="Enter your contact name"
           required
@@ -29,6 +31,7 @@ class Form extends Component {
           type="email"
           id="contactEmail"
           name="contactEmail"
+          autoComplete="email"
           className="form-control"
           placeholder="Enter your contact email"
           required
@@ -39,6 +42,7 @@ class Form extends Component {
           type="text"
           id="agencyCode"
           name="agencyCode"
+          autoComplete="off"
           className="form-control"
           placeholder="Enter gency id code"
         />

@@ -9,7 +9,6 @@ import NoMatch from './pages/noMatch';
 import Signin from './pages/signin';
 
 describe('Renders pages', () => {
-
   it('Signup without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Signup />, div);
@@ -45,5 +44,4 @@ describe('Renders pages', () => {
     ReactDOM.render(<Signin />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-
 });

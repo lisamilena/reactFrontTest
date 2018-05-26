@@ -29,7 +29,8 @@ class Index {
       ReactDOM.render(locations[window.location.pathname], element);
       registerServiceWorker();
     } catch (e) {
-      window.location.pathname = '/notFound';
+      console.log(e);
+      //window.location.pathname = '/notFound';
     }
   }
 }

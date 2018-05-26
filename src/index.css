@@ -120,4 +120,5 @@ body a.app-link {
 }
 #signup-menu > li > a > .material-icons{
   font-size: 20px;
+  margin-right: 10px;
 }

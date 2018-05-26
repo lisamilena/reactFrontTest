@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
 import Header from '../../components/header';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
-import data from './data.json';
+//import data from './data.json';
+const activeItem = 'check_circle',
+  inactiveItem = 'panorama_fish_eye';
+let items = [];
 
 class Signup extends Component {
+  constructor(props) {
+    super(props);
+
+    fetch('/data.json', {
+      method: 'GET',
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        items = data.items;
+        this.setState({ title: data.title, anontation: data.anontation });
+      });
+  }
+
   toggleClass(selectedItem) {
-    data.items.map(item => {
-      if (item.id === selectedItem && item.icon === data.activeItem)
+    items.map(item => {
+      if (item.id === selectedItem && item.active)
         document.location.href = item.link;
-      item.icon =
-        item.id === selectedItem ? data.activeItem : data.inactiveItem;
+      item.active = item.id === selectedItem;
       return item;
     });
     this.setState({ active: !!this.state && !this.state.active });
@@ -20,28 +37,32 @@ class Signup extends Component {
       <div>
         <Header title="signup" />
         <div className="content">
-          <h2 className="sub-title">what kind of user are you?</h2>
+          {this.state ? (
+            <h2 className="sub-title">{this.state.title}</h2>
+          ) : null}
           <ul id="signup-menu">
-            {data.items.map((item, index) => (
-              <li
-                key={index}
-                onClick={() => {
-                  this.toggleClass(item.id);
-                }}
-              >
-                <a
-                  href={item.link}
-                  className={item.icon === data.activeItem ? 'selected' : ''}
-                >
-                  <span className="material-icons">{item.icon}</span>{' '}
-                  {item.title}
-                </a>
-              </li>
-            ))}
+            {items.length ? (
+              items.map((item, index) => (
+                <li
+                  key={index}
+                  onClick={() => {
+                    this.toggleClass(item.id);
+                  }}>
+                  <a href={item.link} className={item.active ? 'selected' : ''}>
+                    <span className="material-icons">
+                      {item.active ? activeItem : inactiveItem}
+                    </span>
+                    {item.title}
+                  </a>
+                </li>
+              ))
+            ) : (
+              <p className="text-center">Loading</p>
+            )}
           </ul>
-          <p className="anontation">
-            Enjoy a 10% discount on your reservation just for signup
-          </p>
+          {this.state ? (
+            <p className="anontation">{this.state.anontation}</p>
+          ) : null}
           <div className="float-bottom">
             <a className="app-link" href="/signin">
               Are you registered?
