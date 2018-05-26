@@ -1,56 +1,66 @@
+body div.form-with-message {
+    padding: 15px 15px 80px;
+}
+
 /*
     FORM
 */
-.form-with-messsage {
-    padding: 10px 10px 70px;
-}
-.form-with-messsage label {
+.form-with-message label {
     font-size: 12px;
     margin-top: 1rem;
 }
-.form-with-messsage input {
+.form-with-message input {
     border: none;
     border-bottom: 1px solid #777;
     border-radius: 0;
     padding: 7px 0;
     font-size: 15px;
 }
-.form-with-messsage button[type="submit"] {
-    position: absolute;
-    bottom: 20px;
-    left: 5%;
-    width: 90%;
-    border-radius: 20px;
-    color: #FFF;
-    background: #b5a05f;
-    text-transform: uppercase;
-}
-.form-with-messsage .legend {
+.form-with-message .legend {
     font-size: 12px;
 }
 
 /*
     Message
 */
-.form-with-messsage .success {
+.form-with-message .success {
     color: #2b40a4;
-    font-size: 90px;
+    font-size: 100px;
     display: block;
     text-align: center;
-    margin: 10px auto;
+    margin: 20px auto;
 }
-.form-with-messsage > div {
+.form-with-message > div {
     padding: 30px 10px;
 }
-.form-with-messsage > div > h3 {
+.form-with-message > div > h3 {
     text-align: center;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 16px;
 }
-.form-with-messsage > div > h3 + h3 {
+.form-with-message > div > h3 + h3 {
     margin-top: 15px;
 }
-.form-with-messsage > div p {
+.form-with-message > div h4 {
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
+    margin: 20px auto;
+}
+.form-with-message > div ul {
+    list-style: none;
+    padding: 0;
+}
+.form-with-message > div li {
+    font-size: 15px;
+    margin: 15px auto;
+}
+.form-with-message > div li .material-icons {
+    color: #2b40a4;
+    font-size: 15px;
+    margin-right: 10px;
+}
+.content.form-with-message a.btn, .content.form-with-message a.btn:hover, .content.form-with-message a.btn:active {
+    background: #FFF;
+    border: 1px solid #444;
+    color: #444;
 }

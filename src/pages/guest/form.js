@@ -12,7 +12,7 @@ class Form extends Component {
             <input type="text" id="lastName" name="lastName" className="form-control" placeholder="Enter your last name" required/>
           
             <label htmlFor="email">Email *</label>
-            <input type="text" id="contactEmail" name="contactEmail" className="form-control" placeholder="Enter your email" required/>
+            <input type="email" id="contactEmail" name="contactEmail" className="form-control" placeholder="Enter your email" required/>
           
             <label htmlFor="phone">Phone</label>
             <input type="phone" id="phone" name="phone" className="form-control" placeholder="Enter your phone"/>

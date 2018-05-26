@@ -1,30 +1,14 @@
 import React, { Component } from 'react';
 import Header from '../../components/header';
-
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
-
-const activeItem = 'check_circle', inactiveItem = 'panorama_fish_eye';
-let items = [{
-  id: 'guest',
-  title: 'a hotel guest',
-  link: '/guest',
-  icon: inactiveItem
-}, {
-  id: 'agency',
-  title: 'a travel agency',
-  link: '/agency',
-  icon: inactiveItem
-}, {
-  id: 'company',
-  title: 'a company',
-  link: '/company',
-  icon: inactiveItem
-}];
+import data from './data.json';
 
 class Home extends Component {
   toggleClass(selectedItem) {
-    items.map(item => {
-      item.icon = (item.id === selectedItem ? activeItem : inactiveItem);
+
+    data.items.map(item => {
+      if(item.id === selectedItem && item.icon === data.activeItem) document.location.href = item.link;
+      item.icon = (item.id === selectedItem ? data.activeItem : data.inactiveItem);
       return item;
     });
     this.setState({ active: !!this.state && !this.state.active });
@@ -40,9 +24,9 @@ class Home extends Component {
           </h2>
           <ul id="signup-menu">
           {
-            items.map((item, index) => (
+            data.items.map((item, index) => (
               <li key={index} onClick={() => {this.toggleClass(item.id)}}>
-                <a href={item.link} className={(item.icon === activeItem ? 'selected' : '')}>
+                <a href={item.link} className={(item.icon === data.activeItem ? 'selected' : '')}>
                   <span className="material-icons">{item.icon}</span> {item.title}
                 </a>
               </li>
@@ -51,7 +35,7 @@ class Home extends Component {
           </ul>
           <p className="anontation">Enjoy a 10% discount on your reservation just for signup</p>
           <div className="float-bottom">
-            <a className="app-link">Are you registered?</a>
+            <a className="app-link" href="/signin">Are you registered?</a>
           </div>
         </div>
       </div>

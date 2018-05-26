@@ -1,0 +1,9 @@
+.not-found.content {
+    padding: 40px 15px;
+}
+.not-found div.material-icons {
+    font-size: 50px;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+}
