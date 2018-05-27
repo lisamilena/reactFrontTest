@@ -1,0 +1,113 @@
+{
+  "guest": {
+    "title": "hotel guest",
+    "content": [
+      {
+        "id": "name",
+        "label": "Name",
+        "type": "text",
+        "required": true,
+        "autocomplete": "name",
+        "placeholder": "Enter your name"
+      },
+      {
+        "id": "lastName",
+        "label": "Last name",
+        "type": "text",
+        "required": true,
+        "autocomplete": "family-name",
+        "placeholder": "Enter your last name"
+      },
+      {
+        "id": "contactEmail",
+        "label": "Email",
+        "type": "email",
+        "required": true,
+        "autocomplete": "email",
+        "placeholder": "Enter your email"
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "type": "tel",
+        "required": false,
+        "autocomplete": "tel-national",
+        "placeholder": "Enter your phone"
+      }
+    ]
+  },
+  "agency": {
+    "title": "travel agency",
+    "content": [
+      {
+        "id": "name",
+        "label": "Agency name",
+        "type": "text",
+        "required": true,
+        "autocomplete": null,
+        "placeholder": "Enter your agency name"
+      },
+      {
+        "id": "contactName",
+        "label": "Contact name",
+        "type": "text",
+        "required": true,
+        "autocomplete": "name",
+        "placeholder": "Enter your contact name"
+      },
+      {
+        "id": "contactEmail",
+        "label": "Contact email",
+        "type": "email",
+        "required": true,
+        "autocomplete": "email",
+        "placeholder": "Enter your contact email"
+      },
+      {
+        "id": "agencyCode",
+        "label": "Agency id code",
+        "type": "text",
+        "required": false,
+        "autocomplete": null,
+        "placeholder": "Enter gency id code"
+      }
+    ]
+  },
+  "company": {
+    "title": "company",
+    "content": [
+      {
+        "id": "name",
+        "label": "Company name",
+        "type": "text",
+        "required": true,
+        "autocomplete": null,
+        "placeholder": "Enter your company name"
+      },
+      {
+        "id": "contactEmail",
+        "label": "Contact email",
+        "type": "email",
+        "required": true,
+        "autocomplete": "email",
+        "placeholder": "Enter your contact email"
+      },
+      {
+        "id": "phone",
+        "label": "Phone",
+        "type": "tel",
+        "required": true,
+        "autocomplete": "tel-national",
+        "placeholder": "Enter your phone"
+      },
+      {
+        "id": "comments",
+        "label": "Comments",
+        "type": "text",
+        "required": false,
+        "autocomplete": null,
+        "placeholder": "Enter your comments"
+      }
+    ]
+  }
+}

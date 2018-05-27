@@ -15,24 +15,6 @@ describe('Renders pages', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('Guest without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Guest />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
-
-  it('Agency without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Agency />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
-
-  it('Company without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Company />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
-
   it('NoMatch without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<NoMatch />, div);

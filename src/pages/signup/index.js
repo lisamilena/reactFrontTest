@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Header from '../../components/header';
+import FormWithMessage from '../../components/formWithMessage';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
-//import data from './data.json';
+
 const activeItem = 'check_circle',
   inactiveItem = 'panorama_fish_eye';
-let items = [];
+let items;
 
 class Signup extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Signup extends Component {
         return response.json();
       })
       .then(data => {
-        items = data.items;
+        items = data.items || true;
         this.setState({ title: data.title, anontation: data.anontation });
       });
   }
@@ -25,7 +26,7 @@ class Signup extends Component {
   toggleClass(selectedItem) {
     items.map(item => {
       if (item.id === selectedItem && item.active)
-        document.location.href = item.link;
+        this.setState({ customerType: item });
       item.active = item.id === selectedItem;
       return item;
     });
@@ -35,40 +36,53 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <Header title="signup" />
-        <div className="content">
-          {this.state ? (
-            <h2 className="sub-title">{this.state.title}</h2>
-          ) : null}
-          <ul id="signup-menu">
-            {items.length ? (
-              items.map((item, index) => (
-                <li
-                  key={index}
-                  onClick={() => {
-                    this.toggleClass(item.id);
-                  }}>
-                  <a href={item.link} className={item.active ? 'selected' : ''}>
-                    <span className="material-icons">
-                      {item.active ? activeItem : inactiveItem}
+        {!this.state || !this.state.customerType ? (
+          <Header title="signup" />
+        ) : (
+          <Header title={this.state.customerType.title} hasBack />
+        )}
+
+        {!this.state || !this.state.customerType ? (
+          <div className="content">
+            {this.state ? (
+              <h2 className="sub-title">{this.state.title}</h2>
+            ) : null}
+
+            <ul id="signup-menu">
+              {items && items.length ? (
+                items.map((item, index) => (
+                  <li
+                    key={index}
+                    onClick={() => {
+                      this.toggleClass(item.id);
+                    }}>
+                    <span className={item.active ? 'selected' : ''}>
+                      <span className="material-icons">
+                        {item.active ? activeItem : inactiveItem}
+                      </span>
+                      {item.title}
                     </span>
-                    {item.title}
-                  </a>
-                </li>
-              ))
-            ) : (
-              <p className="text-center">Loading</p>
-            )}
-          </ul>
-          {this.state ? (
-            <p className="anontation">{this.state.anontation}</p>
-          ) : null}
-          <div className="float-bottom">
-            <a className="app-link" href="/signin">
-              Are you registered?
-            </a>
+                  </li>
+                ))
+              ) : (
+                <p className="text-center">
+                  {!items ? 'Loading' : 'Something went wrong'}
+                </p>
+              )}
+            </ul>
+
+            {this.state ? (
+              <p className="anontation">{this.state.anontation}</p>
+            ) : null}
+            <div className="float-bottom">
+              <a className="app-link" href="/signin">
+                Are you registered?
+              </a>
+            </div>
           </div>
-        </div>
+        ) : (
+          <FormWithMessage customerType={this.state.customerType} />
+        )}
       </div>
     );
   }
