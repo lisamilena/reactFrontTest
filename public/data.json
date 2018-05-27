@@ -4,14 +4,14 @@
     "items": [{
         "id": "guest",
         "title": "a hotel guest",
-        "link": "/guest"
+        "upsertLink": "/api/upsertGuest"
     }, {
         "id": "agency",
         "title": "a travel agency",
-        "link": "/agency"
+        "upsertLink": "/api/upsertAgency"
     }, {
         "id": "company",
         "title": "a company",
-        "link": "/company"
+        "upsertLink": "/api/upsertCompany"
     }]
 }

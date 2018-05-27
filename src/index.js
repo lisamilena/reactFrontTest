@@ -4,9 +4,6 @@ import './index.css';
 import '../node_modules/material-design-icons/iconfont/material-icons.css';
 
 import Signup from './pages/signup';
-import Guest from './pages/guest';
-import Agency from './pages/agency';
-import Company from './pages/company';
 import NoMatch from './pages/noMatch';
 import Signin from './pages/signin';
 
@@ -18,19 +15,15 @@ class Index {
 
     const locations = {
       '/': <Signup />,
-      '/guest': <Guest />,
-      '/agency': <Agency />,
-      '/company': <Company />,
-      '/notFound': <NoMatch />,
       '/signin': <Signin />,
+      '/notFound': <NoMatch />,
     };
 
     try {
-      ReactDOM.render(locations[window.location.pathname], element);
+      ReactDOM.render(locations[window.location.pathname] || <NoMatch />, element);
       registerServiceWorker();
     } catch (e) {
-      console.log(e);
-      //window.location.pathname = '/notFound';
+      window.location.pathname = '/notFound';
     }
   }
 }

@@ -109,16 +109,16 @@ body a.app-link {
 #signup-menu > li:last-child {
   border-bottom: 1px solid #ececec;
 }
-#signup-menu > li > a {
+#signup-menu > li > span {
   text-transform: uppercase;
   color: #a1a1a1;
   text-decoration: none;
 }
-#signup-menu > li > a.selected, #signup-menu > li > a:hover, #signup-menu > li > a:active, #signup-menu > li > a:focus {
+#signup-menu > li > span.selected, #signup-menu > li > span:hover {
   color: #2b40a4;
   text-decoration: none;
 }
-#signup-menu > li > a > .material-icons{
+#signup-menu > li > span > .material-icons{
   font-size: 20px;
   margin-right: 10px;
 }

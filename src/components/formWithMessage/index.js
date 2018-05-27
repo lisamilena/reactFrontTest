@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import dataResponse from './data.json';
+import FormFromRequest from '../formFromRequest';
 import './style.css';
 
 class FormWithMessage extends Component {
@@ -18,11 +19,11 @@ class FormWithMessage extends Component {
       });
     });
 
-    fetch(this.props.url, {
+    fetch(this.props.customerType.upsertLink, {
       method: 'POST',
       body: itemToSend,
     }).then(() => {
-      const response = dataResponse[this.props.url];
+      const response = dataResponse[this.props.customerType.upsertLink];
       this.data = {
         name: itemToSend.name,
         title: response.title,
@@ -37,7 +38,7 @@ class FormWithMessage extends Component {
       <div className="form-with-message content">
         {!this.data ? (
           <form onSubmit={this.handleSubmit}>
-            <this.props.form />
+            <FormFromRequest type={this.props.customerType.id}/>
             <p className="legend">* required fields</p>
             <div className="text-center float-content">
               <button type="submit" className="btn">
@@ -45,9 +46,7 @@ class FormWithMessage extends Component {
               </button>
             </div>
           </form>
-        ) : null}
-
-        {this.data ? (
+        ) : (
           <div>
             <h3>{this.data.title}</h3>
             <h3>{this.data.name}</h3>
@@ -68,7 +67,7 @@ class FormWithMessage extends Component {
               </a>
             </div>
           </div>
-        ) : null}
+        )}
       </div>
     );
   }

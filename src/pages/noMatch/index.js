@@ -7,7 +7,7 @@ class NoMatch extends Component {
       <div className="content not-found text-center">
         <h2>404</h2>
         <div className="material-icons">warning</div>
-        <p>Page not found</p>
+        <p>Ooops, something went worng, page not found</p>
         <div className="float-content-top">
           <a className="material-icons" href="/">
             home
