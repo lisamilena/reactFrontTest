@@ -1,17 +1,21 @@
 {
-    "title": "what kind of user are you?",
-    "anontation": "Enjoy a 10% discount on your reservation just for signup",
-    "items": [{
-        "id": "guest",
-        "title": "a hotel guest",
-        "upsertLink": "/api/upsertGuest"
-    }, {
-        "id": "agency",
-        "title": "a travel agency",
-        "upsertLink": "/api/upsertAgency"
-    }, {
-        "id": "company",
-        "title": "a company",
-        "upsertLink": "/api/upsertCompany"
-    }]
+  "title": "what kind of user are you?",
+  "anontation": "Enjoy a 10% discount on your reservation just for signup",
+  "items": [
+    {
+      "id": "guest",
+      "title": "a hotel guest",
+      "upsertLink": "/api/upsertGuest"
+    },
+    {
+      "id": "agency",
+      "title": "a travel agency",
+      "upsertLink": "/api/upsertAgency"
+    },
+    {
+      "id": "company",
+      "title": "a company",
+      "upsertLink": "/api/upsertCompany"
+    }
+  ]
 }

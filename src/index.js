@@ -20,7 +20,10 @@ class Index {
     };
 
     try {
-      ReactDOM.render(locations[window.location.pathname] || <NoMatch />, element);
+      ReactDOM.render(
+        locations[window.location.pathname] || <NoMatch />,
+        element,
+      );
       registerServiceWorker();
     } catch (e) {
       window.location.pathname = '/notFound';

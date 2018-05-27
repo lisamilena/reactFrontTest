@@ -38,7 +38,7 @@ class FormWithMessage extends Component {
       <div className="form-with-message content">
         {!this.data ? (
           <form onSubmit={this.handleSubmit}>
-            <FormFromRequest type={this.props.customerType.id}/>
+            <FormFromRequest type={this.props.customerType.id} />
             <p className="legend">* required fields</p>
             <div className="text-center float-content">
               <button type="submit" className="btn">
@@ -62,7 +62,7 @@ class FormWithMessage extends Component {
               </ul>
             ) : null}
             <div className="text-center float-content">
-              <a className="btn" href="/">
+              <a className="btn" href="/signin">
                 Continue
               </a>
             </div>

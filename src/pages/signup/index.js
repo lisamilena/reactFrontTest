@@ -36,50 +36,53 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        {!this.state || !this.state.customerType ?
-          <Header title="signup" /> :
+        {!this.state || !this.state.customerType ? (
+          <Header title="signup" />
+        ) : (
           <Header title={this.state.customerType.title} hasBack />
-        }
+        )}
 
-        {!this.state || !this.state.customerType ?
-        <div className="content">
-          {this.state ? (
-            <h2 className="sub-title">{this.state.title}</h2>
-          ) : null}
+        {!this.state || !this.state.customerType ? (
+          <div className="content">
+            {this.state ? (
+              <h2 className="sub-title">{this.state.title}</h2>
+            ) : null}
 
-          <ul id="signup-menu">
-            {items && items.length ? (
-              items.map((item, index) => (
-                <li
-                  key={index}
-                  onClick={() => {
-                    this.toggleClass(item.id);
-                  }}>
-                  <span className={item.active ? 'selected' : ''}>
-                    <span className="material-icons">
-                      {item.active ? activeItem : inactiveItem}
+            <ul id="signup-menu">
+              {items && items.length ? (
+                items.map((item, index) => (
+                  <li
+                    key={index}
+                    onClick={() => {
+                      this.toggleClass(item.id);
+                    }}>
+                    <span className={item.active ? 'selected' : ''}>
+                      <span className="material-icons">
+                        {item.active ? activeItem : inactiveItem}
+                      </span>
+                      {item.title}
                     </span>
-                    {item.title}
-                  </span>
-                </li>
-              ))
-            ) : (
-              <p className="text-center">{!items ? 'Loading' : 'Something went wrong'}</p>
-            )}
-          </ul>
+                  </li>
+                ))
+              ) : (
+                <p className="text-center">
+                  {!items ? 'Loading' : 'Something went wrong'}
+                </p>
+              )}
+            </ul>
 
-          {this.state ? (
-            <p className="anontation">{this.state.anontation}</p>
-          ) : null}
-          <div className="float-bottom">
-            <a className="app-link" href="/signin">
-              Are you registered?
-            </a>
+            {this.state ? (
+              <p className="anontation">{this.state.anontation}</p>
+            ) : null}
+            <div className="float-bottom">
+              <a className="app-link" href="/signin">
+                Are you registered?
+              </a>
+            </div>
           </div>
-        </div>
-        :
-        <FormWithMessage customerType={this.state.customerType} />
-        }
+        ) : (
+          <FormWithMessage customerType={this.state.customerType} />
+        )}
       </div>
     );
   }
